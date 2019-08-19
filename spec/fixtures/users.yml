@@ -1,0 +1,45 @@
+---
+user_6:
+  id: 6
+  role: patient
+  created_at: '2019-08-14 14:23:58.572435'
+  updated_at: '2019-08-16 14:38:35.111161'
+  email: patient@example.com
+  encrypted_password: "$2a$11$Z.oYq7Vtf88RpnGjVCRtTeWjhAiC6fmjPry.RuJ3deSw4dE2BMipu"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  name: John Doe
+user_5:
+  id: 5
+  role: doctor
+  created_at: '2019-08-13 17:32:26.783787'
+  updated_at: '2019-08-16 14:50:43.537982'
+  email: doctor@example.com
+  encrypted_password: "$2a$11$s9iUJwplog.RGxs42xhtpOJjUZIyczpVg7SzTzw8o9LpyPS4cfdN6"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  name: Taiwo Ogunlana
+user_7:
+  id: 7
+  role: doctor
+  created_at: '2019-08-16 11:08:03.757147'
+  updated_at: '2019-08-16 14:51:19.289373'
+  email: joe@doc.com
+  encrypted_password: "$2a$11$9iZD3KvyJhJV.B.xDyS5eeyzUHhcCiDhFrd4MtPKPY4pvFCBs1pWi"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  name: Ben Carson
+user_1:
+  id: 1
+  role: admin
+  created_at: '2019-08-11 09:29:15.40986'
+  updated_at: '2019-09-05 14:15:54.144927'
+  email: admin@example.com
+  encrypted_password: "$2a$11$tuCfCQNLD17rC7Cw6jBe.uC81SACdh/A31VuLZBz67nP/5P/pR0Ce"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  name: Admin User
