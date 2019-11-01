@@ -1,0 +1,91 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  display: flex;
+  background: #333;
+  color:#fff;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.logo {
+  color: #fff;
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  list-style: none;
+  margin-top: 1rem;
+  font-size: 15px;
+}
+
+#navbar ul li a {
+  color: #fff;
+  padding: 0.75rem;
+  text-decoration: none;
+  margin: 0 0.25rem;
+  font-weight: bold;
+}
+
+#navbar ul li {
+  padding:  10px 20px;
+}
+
+#navbar ul li a:hover {
+  background: #081;
+  border-radius: 5px;
+  color: #f4f4f4;
+}
+
+header {
+  color: #000;
+  background: url("check-up.jpg") no-repeat top center/cover;
+  height: 95vh;
+  box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);
+  margin-top: -10px;
+  background-size: cover;
+}
+
+.showcase-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+}
+
+.showcase-content h1 {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.showcase-content p {
+  font-size: 1rem;
+}
+
+.login-btn {
+  width: 200px;
+  color: #fff !important;
+  text-decoration: none !important;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #060;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.login-btn:hover {
+  background: #081;
+}
+
+.text-primary {
+  color: #081;
+}

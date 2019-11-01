@@ -1,20 +1,29 @@
 FROM ruby:2.5.1
 
-# NodeJs
+# Node.js
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
-    && apt-get install -y nodejs
+    && apt-get install -y nodejs postgresql-client
 
-# copy to application dir
-COPY . /application
+# copy app
+RUN mkdir /hospital-sys
+WORKDIR /hospital-sys
 
-# change to /application dir
-WORKDIR /application
+COPY Gemfile /hospital-sys/Gemfile
+COPY Gemfile.lock /hospital-sys/Gemfile.lock
 
-# install gems
-RUN gem install bundler -v 2.0.1
-RUN bundle install --deployment --without development test
+# update gems
+# RUN gem update --system && gem update bundler
+# RUN bundle install --full-index
+RUN gem update --system && gem update bundler
+RUN bundle install --full-index
 
-# Set Rails environment to production
-ENV RAILS_ENV production
+COPY . /hospital-sys
 
-ENTRYPOINT ./entrypoint.sh
+# Add script to be executed every time the container starts
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
+
+# Start the main process
+CMD ["rails", "server", "-b", "0.0.0.0"]

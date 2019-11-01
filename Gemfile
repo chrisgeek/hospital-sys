@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'bootstrap'
 gem 'bootstrap3-datetimepicker-rails'
 gem "auto_strip_attributes", "~> 2.5"
+gem 'font-awesome-sass', '~> 5.11.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

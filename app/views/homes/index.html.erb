@@ -1,2 +1,25 @@
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
+<nav id="navbar">
+  <h1 class="logo">
+    <span class="text-primary">
+      <i class="fas fa-hospital"></i>
+        Hospital
+      </i>
+    </span>Name
+  </h1>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><%= link_to 'Login', new_user_session_path %></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</nav>
+<header class="showcase">
+<div class="showcase-content">
+<h1>Quality Health Care You Can Trust </h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis</p>
+<%= link_to 'Click to Sign In', new_user_session_path, class: 'login-btn' %>
+</div>
+</header>
+<i class="fas fa-bars"></i>
+

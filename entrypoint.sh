@@ -1,5 +1,8 @@
-# Compile Assets
-bundle exec rake assets:precompile
+#!/bin/bash
+set -e
 
-# Start server
-bundle exec rails server
+# REmove server.pid if it exists
+rm -f /hospital-sys/tmp/pids/server.pid
+
+# execute container's main process (CMD in docker file)
+exec "$@"
