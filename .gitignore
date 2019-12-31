@@ -32,4 +32,4 @@
 /config/master.key
 
 # Ignore other files
-/config/database.yml
+# /config/database.yml
