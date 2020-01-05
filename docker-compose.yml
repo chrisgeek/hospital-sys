@@ -18,5 +18,4 @@ services:
       context: .
     volumes:
       - .:/hospital-sys
-    command: ["rspec", "spec"]
-    
+    # command: ["rspec", "spec"]

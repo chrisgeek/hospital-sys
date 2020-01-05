@@ -2,17 +2,17 @@ sudo: required
 
 language: ruby
 
-env:
-  - DB=postgresql
-
 services:
   - docker
+  - postgresql
+language: ruby
 
 before_install:
-  - docker build -t chrisgeek/hospital-sys .
-
-before_script:
-  - cp config/database.travis.yml config/database.yml
+  - docker-compose build
+  - docker-compose up -d && docker ps
+env:
+  - RAILS_ENV=test
 
 script:
-  - docker run chrisgeek/hospital-sys rspec spec 
+  - docker-compose run web bin/rake db:create db:migrate
+  - docker-compose run web bin/bundle exec rspec
