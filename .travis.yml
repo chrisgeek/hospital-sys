@@ -17,3 +17,6 @@ script:
   - docker-compose run web bin/rake db:create
   - docker-compose run web bin/rake db:migrate RAILS_ENV=test
   - docker-compose run web bin/bundle exec rspec
+
+after_script:
+  - docker-compose down
