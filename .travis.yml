@@ -14,5 +14,6 @@ env:
   - RAILS_ENV=test
 
 script:
-  - docker-compose run web bin/rake db:create db:migrate
+  - docker-compose run web bin/rake db:create
+  - docker-compose run web bin/rake db:migrate RAILS_ENV=test
   - docker-compose run web bin/bundle exec rspec
