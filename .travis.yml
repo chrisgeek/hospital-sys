@@ -5,7 +5,6 @@ language: ruby
 services:
   - docker
   - postgresql
-language: ruby
 
 before_install:
   - docker-compose build
@@ -20,3 +19,16 @@ script:
 
 after_script:
   - docker-compose down
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "hospital-sys"
+  env: "HospitalSys-env"
+  bucket_name: "elasticbeanstalk-us-east-2-860837640424"
+  bucket_path: "hospital-sys"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
