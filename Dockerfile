@@ -12,6 +12,7 @@ COPY Gemfile /hospital-sys/Gemfile
 COPY Gemfile.lock /hospital-sys/Gemfile.lock
 
 # update gems
+# RUN bundle install --full-index
 # RUN gem update --system && gem update bundler
 RUN bundle install --full-index
 
@@ -21,8 +22,8 @@ COPY . /hospital-sys
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
+
 # EXPOSE 3000
-FROM nginx
 EXPOSE 80
 
 # Start the main process

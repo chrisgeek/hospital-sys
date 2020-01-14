@@ -13,9 +13,9 @@ services:
       - "3000:3000"
     depends_on:
       - db
-  tests:
-    build:
-      context: .
-    volumes:
-      - .:/hospital-sys
-    # command: ["rspec", "spec"]
+  # tests:
+  #   build:
+  #     context: .
+  #   volumes:
+  #     - .:/hospital-sys
+  #   command: ["rspec", "spec"]
