@@ -17,15 +17,18 @@ script:
   - docker-compose run web bin/rake db:migrate RAILS_ENV=test
   - docker-compose run web bin/bundle exec rspec
 
-deploy:
-  provider: elasticbeanstalk
-  region: "us-east-2"
-  app: "hospital-sys"
-  env: "HospitalSys-env"
-  bucket_name: "elasticbeanstalk-us-east-2-860837640424"
-  bucket_path: "hospital-sys"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-east-2"
+#   app: "hospital-sys"
+#   env: "HospitalSys-env"
+#   bucket_name: "elasticbeanstalk-us-east-2-860837640424"
+#   bucket_path: "hospital-sys"
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+  # secret_access_key:
+  #   secure: "$AWS_SECRET_KEY"
+
+after_success:
+  - echo "TravisCI job completed"
